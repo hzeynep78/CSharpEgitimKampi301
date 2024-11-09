@@ -14,5 +14,6 @@ namespace CSharpEgitimKampi301.DataAccessLayer.Context
         public DbSet<Customer> customers { get; set; }
         public DbSet<Product> products { get; set; }
         public DbSet<Order> orders { get; set; }
+        public DbSet<Admin> admins { get; set; }
     }
 }
