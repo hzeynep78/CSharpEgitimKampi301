@@ -29,5 +29,6 @@ namespace CSharpEgitimKampi301.EF
         public virtual DbSet<TBL_CUSTOMER> TBL_CUSTOMER { get; set; }
         public virtual DbSet<TBL_GUIDE> TBL_GUIDE { get; set; }
         public virtual DbSet<TBL_LOCATION> TBL_LOCATION { get; set; }
+        public virtual DbSet<TBL_ADMIN> TBL_ADMIN { get; set; }
     }
 }

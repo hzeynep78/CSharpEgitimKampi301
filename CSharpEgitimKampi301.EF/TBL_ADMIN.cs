@@ -12,11 +12,10 @@ namespace CSharpEgitimKampi301.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class TBL_CUSTOMER
+    public partial class TBL_ADMIN
     {
-        public int CustomerId { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerSurname { get; set; }
-        public Nullable<decimal> CustomerBalance { get; set; }
+        public int AdminId { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }
