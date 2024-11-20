@@ -14,9 +14,9 @@ namespace CSharpEgitimKampi301.EF
     
     public partial class TBL_CUSTOMER
     {
-        public int CustomerId { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerSurname { get; set; }
-        public Nullable<decimal> CustomerBalance { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public Nullable<decimal> Balance { get; set; }
     }
 }

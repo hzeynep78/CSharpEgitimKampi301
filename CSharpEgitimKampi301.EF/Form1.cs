@@ -27,8 +27,8 @@ namespace CSharpEgitimKampi301.EF
         private void btnAdd_Click(object sender, EventArgs e)
         {
             TBL_GUIDE guide = new TBL_GUIDE();
-            guide.GuideName = txtName.Text;
-            guide.GuideSurname = txtSurname.Text;
+            guide.Name = txtName.Text;
+            guide.Surname = txtSurname.Text;
             db.TBL_GUIDE.Add(guide);
             db.SaveChanges();
             MessageBox.Show("Guide added successfully.");
@@ -47,8 +47,8 @@ namespace CSharpEgitimKampi301.EF
         {
             int id = Convert.ToInt32(txtId.Text);
             var updateValue = db.TBL_GUIDE.Find(id);
-            updateValue.GuideName = txtName.Text;
-            updateValue.GuideSurname = txtSurname.Text;
+            updateValue.Name = txtName.Text;
+            updateValue.Surname = txtSurname.Text;
             db.SaveChanges();
             MessageBox.Show("Guide updated successfully.");
         }
@@ -56,7 +56,7 @@ namespace CSharpEgitimKampi301.EF
         private void btnID_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtId.Text);
-            var values = db.TBL_GUIDE.Where(x => x.GuideId == id).ToList();
+            var values = db.TBL_GUIDE.Where(x => x.Id == id).ToList();
             dataGridView1.DataSource = values;
         }
     }

@@ -20,9 +20,9 @@ namespace CSharpEgitimKampi301.EF
             this.TBL_LOCATION = new HashSet<TBL_LOCATION>();
         }
     
-        public int GuideId { get; set; }
-        public string GuideName { get; set; }
-        public string GuideSurname { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBL_LOCATION> TBL_LOCATION { get; set; }

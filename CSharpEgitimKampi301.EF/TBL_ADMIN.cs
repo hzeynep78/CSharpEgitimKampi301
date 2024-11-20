@@ -14,7 +14,7 @@ namespace CSharpEgitimKampi301.EF
     
     public partial class TBL_ADMIN
     {
-        public int AdminId { get; set; }
+        public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
     }

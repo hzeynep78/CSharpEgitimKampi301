@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EgitimKampiEfDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EgitimKampiEfDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -17,34 +17,34 @@
         </EntityType>
         <EntityType Name="TBL_ADMIN">
           <Key>
-            <PropertyRef Name="AdminId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TBL_CUSTOMER">
           <Key>
-            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
-          <Property Name="CustomerSurname" Type="varchar" MaxLength="50" />
-          <Property Name="CustomerBalance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="TBL_GUIDE">
           <Key>
-            <PropertyRef Name="GuideId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="GuideId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GuideName" Type="varchar" MaxLength="50" />
-          <Property Name="GuideSurname" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TBL_LOCATION">
           <Key>
-            <PropertyRef Name="LocationId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="City" Type="varchar" MaxLength="50" />
           <Property Name="Country" Type="varchar" MaxLength="50" />
           <Property Name="Capacity" Type="tinyint" />
@@ -57,7 +57,7 @@
           <End Role="TBL_LOCATION" Type="Self.TBL_LOCATION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TBL_GUIDE">
-              <PropertyRef Name="GuideId" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="TBL_LOCATION">
               <PropertyRef Name="GuideId" />
@@ -75,7 +75,8 @@
             <End Role="TBL_LOCATION" EntitySet="TBL_LOCATION" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EgitimKampiEfDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -89,29 +90,37 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="TBL_ADMIN">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="TBL_CUSTOMER">
           <Key>
-            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerBalance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="TBL_GUIDE">
           <Key>
-            <PropertyRef Name="GuideId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="GuideId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GuideName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GuideSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TBL_LOCATION" Relationship="Self.FK_TBL_LOCATION_TBL_GUIDE" FromRole="TBL_GUIDE" ToRole="TBL_LOCATION" />
         </EntityType>
         <EntityType Name="TBL_LOCATION">
           <Key>
-            <PropertyRef Name="LocationId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Capacity" Type="Byte" />
@@ -125,7 +134,7 @@
           <End Role="TBL_LOCATION" Type="Self.TBL_LOCATION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TBL_GUIDE">
-              <PropertyRef Name="GuideId" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="TBL_LOCATION">
               <PropertyRef Name="GuideId" />
@@ -134,6 +143,7 @@
         </Association>
         <EntityContainer Name="EgitimKampiEfDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" />
           <EntitySet Name="TBL_CUSTOMER" EntityType="Self.TBL_CUSTOMER" />
           <EntitySet Name="TBL_GUIDE" EntityType="Self.TBL_GUIDE" />
           <EntitySet Name="TBL_LOCATION" EntityType="Self.TBL_LOCATION" />
@@ -141,16 +151,7 @@
             <End Role="TBL_GUIDE" EntitySet="TBL_GUIDE" />
             <End Role="TBL_LOCATION" EntitySet="TBL_LOCATION" />
           </AssociationSet>
-          <EntitySet Name="TBL_ADMIN" EntityType="EgitimKampiEfDBModel.TBL_ADMIN" />
         </EntityContainer>
-        <EntityType Name="TBL_ADMIN">
-          <Key>
-            <PropertyRef Name="AdminId" />
-          </Key>
-          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -168,44 +169,44 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ADMIN">
+            <EntityTypeMapping TypeName="EgitimKampiEfDBModel.TBL_ADMIN">
+              <MappingFragment StoreEntitySet="TBL_ADMIN">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TBL_CUSTOMER">
             <EntityTypeMapping TypeName="EgitimKampiEfDBModel.TBL_CUSTOMER">
               <MappingFragment StoreEntitySet="TBL_CUSTOMER">
-                <ScalarProperty Name="CustomerBalance" ColumnName="CustomerBalance" />
-                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="CustomerSurname" ColumnName="CustomerSurname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_GUIDE">
             <EntityTypeMapping TypeName="EgitimKampiEfDBModel.TBL_GUIDE">
               <MappingFragment StoreEntitySet="TBL_GUIDE">
-                <ScalarProperty Name="GuideId" ColumnName="GuideId" />
-                <ScalarProperty Name="GuideName" ColumnName="GuideName" />
-                <ScalarProperty Name="GuideSurname" ColumnName="GuideSurname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_LOCATION">
             <EntityTypeMapping TypeName="EgitimKampiEfDBModel.TBL_LOCATION">
               <MappingFragment StoreEntitySet="TBL_LOCATION">
-                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="Capacity" ColumnName="Capacity" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="DayNight" ColumnName="DayNight" />
                 <ScalarProperty Name="GuideId" ColumnName="GuideId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_ADMIN">
-            <EntityTypeMapping TypeName="EgitimKampiEfDBModel.TBL_ADMIN">
-              <MappingFragment StoreEntitySet="TBL_ADMIN">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
