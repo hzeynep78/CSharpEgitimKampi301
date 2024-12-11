@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpEgitimKampi301.BusinessLayer.Concrete
+namespace CSharpEgitimKampi301.BusinessLayer.Concrete                                                                                               
 {
     public class CategoryManager : ICategoryService
     {

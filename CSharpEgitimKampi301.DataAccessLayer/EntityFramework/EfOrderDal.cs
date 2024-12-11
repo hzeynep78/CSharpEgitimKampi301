@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CSharpEgitimKampi301.DataAccessLayer.EntityFramework
 {
-    internal class EfOrderDal:GenericRepository<Order>, IOrderDal
+    public class EfOrderDal:GenericRepository<Order>, IOrderDal
     {
     }
 }
