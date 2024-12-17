@@ -10,5 +10,6 @@ namespace CSharpEgitimKampi301.DataAccessLayer.Abstract
 {
     public interface IProductService : IGenericService<Product>
     {
+        List<Object> TGetProductsWithCategory();
     }
 }
